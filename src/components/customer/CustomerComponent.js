@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 function CustomerComponent() {
-  return (
-    <div>CustomerComponent</div>
-  )
+  return <div>CustomerComponent</div>;
 }
 
-export default CustomerComponent
+export default CustomerComponent;

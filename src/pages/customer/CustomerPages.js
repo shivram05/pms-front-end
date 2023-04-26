@@ -1,13 +1,13 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import CustomerContainer from "../../container/customer/CustomerContainer";
+import CustomerHeader from "../../components/customer/CustomerHeader";
 
 function CustomerPages() {
   return (
     <Container>
-      <Header />
+      <CustomerHeader />
       <CustomerContainer />
       <Footer />
     </Container>
