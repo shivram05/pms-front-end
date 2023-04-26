@@ -23,10 +23,12 @@ export default function PageRoutes(props) {
 
       <Route exact path="seller/register" element={<RegisterPage />} />
 
-      <Route path="login/register" element={<Navigate replace to="/register" />} />
+      <Route
+        path="login/register"
+        element={<Navigate replace to="/register" />}
+      />
 
-      <Route path="owner" element={<OwnerPages/>}/>
-
+      <Route path="owner" element={<OwnerPages />} />
     </Routes>
   );
 }
