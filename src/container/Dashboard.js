@@ -18,7 +18,7 @@ export default function Dashboard() {
         <PropertyContainer />
       </div>
       <div>
-      
+
         <FeatureSection />
       </div>
       <div>

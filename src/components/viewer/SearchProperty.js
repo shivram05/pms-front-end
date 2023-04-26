@@ -4,8 +4,6 @@ import Form from 'react-bootstrap/Form';
 
 function SearchProperty() {
     return (
-
-
         <Form>
             <Row>
                 <Col>

@@ -6,6 +6,8 @@ import RegisterPage from "../pages/RegisterPage";
 import PropertyDetailsPage from "../pages/PropertyDetailsPage";
 import ListOfPropertyDetailsPage from "../pages/ListOfPropertyDetailsPage";
 import OwnerPages from "../pages/owner/OwnerPages";
+import CustomerComponent from "../components/customer/CustomerComponent";
+import CustomerPages from "../pages/customer/CustomerPages";
 
 export default function PageRoutes(props) {
   return (
@@ -26,6 +28,8 @@ export default function PageRoutes(props) {
       <Route path="login/register" element={<Navigate replace to="/register" />} />
 
       <Route path="owner" element={<OwnerPages/>}/>
+
+      <Route path="customer" element={<CustomerPages />} />
 
     </Routes>
   );
