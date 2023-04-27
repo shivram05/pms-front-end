@@ -1,9 +1,9 @@
-import React from 'react'
+// import React from 'react'
 
-function OwnerComponent() {
-  return (
-    <div>OwnerComponent</div>
-  )
-}
+// function OwnerComponent() {
+//   return (
+//     <div>OwnerComponent</div>
+//   )
+// }
 
-export default OwnerComponent
+// export default OwnerComponent

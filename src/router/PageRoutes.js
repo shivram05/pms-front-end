@@ -14,13 +14,16 @@ import { ResetPassword } from "../components/resetpassword/ResetPassword";
 import OfferPages from "../pages/owner/OfferPages";
 import SellNewItem from "../pages/owner/SellNewItem";
 import CustomerPropertyDetailsPage from "../components/customer/CustomerPropertyDetailsPage";
+import { Toaster } from "react-hot-toast";
+import SuperUser from "../pages/admin/SuperUser";
 
 export default function PageRoutes(props) {
   return (
-    <Routes>
-      <Route exact path="/" element={<Dashboard />} />
-      <Route exact path="login" element={<LoginPage />} />
-      <Route exact path="register" element={<RegisterPage />} />
+    <>
+      <Routes>
+        <Route exact path="/" element={<Dashboard />} />
+        <Route exact path="login" element={<LoginPage />} />
+        <Route exact path="register" element={<RegisterPage />} />
 
       <Route exact path="property/:id" element={<PropertyDetailsPage />} />
       <Route
@@ -31,9 +34,13 @@ export default function PageRoutes(props) {
 
       <Route exact path="buy" element={<ListOfPropertyDetailsPage />} />
 
-      <Route exact path="buy/property/:id" element={<PropertyDetailsPage />} />
+        <Route
+          exact
+          path="buy/property/:id"
+          element={<PropertyDetailsPage />}
+        />
 
-      <Route exact path="seller" element={<LoginPage />} />
+        <Route exact path="seller" element={<LoginPage />} />
 
       <Route exact path="seller/register" element={<RegisterPage />} />
 
@@ -54,9 +61,12 @@ export default function PageRoutes(props) {
         // element={<Navigate replace to="/register" />}
       />
 
-      <Route path="/owner" element={<OwnerPages />} />
-      <Route path="owner/offer" element={<OfferPages />} />
-      <Route path="owner/sellNewItem" element={<SellNewItem />} />
-    </Routes>
+        <Route path="/owner" element={<OwnerPages />} />
+        <Route path="owner/offer" element={<OfferPages />} />
+        <Route path="owner/sellNewItem" element={<SellNewItem />} />
+        <Route path="admin" element={<SuperUser />} />
+      </Routes>
+      <Toaster />
+    </>
   );
 }

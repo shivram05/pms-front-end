@@ -18,7 +18,6 @@ const ListOfPropertyOnSell = (props) => {
   return (
     <>
       {showOffer()}
-
       <div className="custom-card-content" onClick={props.clicked}>
         <Card style={{ width: "15rem" }}>
           <Card.Img
@@ -32,13 +31,14 @@ const ListOfPropertyOnSell = (props) => {
               sdfsdfsdfssdfdsfdsfdsfdsfsdfdsfdsfsdfd
             </Card.Text>
             <Button onClick={showOffer}>Offer</Button>
-            {""}
           </Card.Body>
         </Card>
       </div>
       <Button onClick={sellNewItem}>Place New Item For Sale</Button>
-
-      <Button onClick={seeAllAdds}>Place New Item For Sale</Button>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+      <Button onClick={seeAllAdds} margi>
+        See other Advertisement
+      </Button>
     </>
   );
 };
