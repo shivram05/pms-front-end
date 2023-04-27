@@ -1,15 +1,15 @@
 import React from "react";
 import { Container } from "react-bootstrap";
 import OwnerContainer from "../../container/owner/OwnerContainer";
-import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import Header from "./Header";
 
 function OwnerPages() {
   return (
     <Container>
       <Header />
       <OwnerContainer />
-      {/* <Footer /> */}
+      <Footer />
     </Container>
   );
 }

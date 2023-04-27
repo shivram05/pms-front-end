@@ -1,38 +1,41 @@
 import React from "react";
-import { Button } from "react-bootstrap";
+import "./ListOfOffer.css";
+import Badge from "react-bootstrap/Badge";
 
 const ListOfOffers = () => {
   const acceptOffer = () => {};
   const declineOffer = () => {};
 
   const offers = () => {
+    const status = "Available";
     return (
-      <table>
+      <table class="table">
         <thead>
           <tr>
-            <th>Offer Name</th>
-            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-            <th>Description</th>
-            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-            <th>Offered Price</th>
-            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <th> Action</th>
+            <th class="th">Offer Name</th>
+            <th class="th">Description</th>
+            <th class="th">Offered Price</th>
+            <th class="th">Action</th>
+            <th class="th">Status</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td>Offer 1</td>
-            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
             <td>Description of Offer 1</td>
-            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
             <td>$19.99</td>
-            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
             <td>
-              <Button onClick={acceptOffer()}>Accept</Button>
-              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-              <Button onClick={declineOffer()} className="secondary">
+              <Badge pill bd="success" onClick={acceptOffer}>
+                Accept
+              </Badge>{" "}
+              <Badge pill bd="danger" onClick={declineOffer} class="secondary">
                 Decline
-              </Button>
+              </Badge>
+            </td>
+            <td>
+              <Badge pill bd="primary">
+                {status}
+              </Badge>
             </td>
           </tr>
         </tbody>
