@@ -1,9 +1,13 @@
-import React from 'react'
+import React from "react";
+import ListOfPropertyOnSell from "../../components/viewer/ListOfPropertiesOnSell";
 
 function OwnerContainer() {
   return (
-    <div>OwnerContainer</div>
-  )
+    <div>
+      Your adds
+      <ListOfPropertyOnSell />
+    </div>
+  );
 }
 
-export default OwnerContainer
+export default OwnerContainer;

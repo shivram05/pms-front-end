@@ -16,7 +16,7 @@ export default function CustomerNavigation() {
   return (
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
-        <a class="navbar-brand" href="/">
+        <a class="navbar-brand" href="customer">
           Home
         </a>
         <button
@@ -32,7 +32,7 @@ export default function CustomerNavigation() {
         </button>
         <div class="collapse navbar-collapse" id="navbarText">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
+            {/* <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="/buy">
                 Buy
               </a>
@@ -41,7 +41,7 @@ export default function CustomerNavigation() {
               <a class="nav-link" href="/seller">
                 Seller
               </a>
-            </li>
+            </li> */}
             <li class="nav-item">
               <a class="nav-link" href="/property">
                 Favourite Property

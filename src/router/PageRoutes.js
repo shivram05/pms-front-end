@@ -6,9 +6,14 @@ import RegisterPage from "../pages/RegisterPage";
 import PropertyDetailsPage from "../pages/PropertyDetailsPage";
 import ListOfPropertyDetailsPage from "../pages/ListOfPropertyDetailsPage";
 import OwnerPages from "../pages/owner/OwnerPages";
+
 // import CustomerComponent from "../components/customer/CustomerComponent";
 import CustomerPages from "../pages/customer/CustomerPages";
 import { ResetPassword } from "../components/resetpassword/ResetPassword";
+
+import OfferPages from "../pages/owner/OfferPages";
+import SellNewItem from "../pages/owner/SellNewItem";
+import CustomerPropertyDetailsPage from "../components/customer/CustomerPropertyDetailsPage";
 
 export default function PageRoutes(props) {
   return (
@@ -18,6 +23,12 @@ export default function PageRoutes(props) {
       <Route exact path="register" element={<RegisterPage />} />
 
       <Route exact path="property/:id" element={<PropertyDetailsPage />} />
+      <Route
+        exact
+        path="customer/property/:id"
+        element={<CustomerPropertyDetailsPage />}
+      />
+
       <Route exact path="buy" element={<ListOfPropertyDetailsPage />} />
 
       <Route exact path="buy/property/:id" element={<PropertyDetailsPage />} />
@@ -36,6 +47,16 @@ export default function PageRoutes(props) {
       <Route path="customer" element={<CustomerPages />} />
 
       <Route path="reset" element={<ResetPassword />} />
+
+      <Route exact path="owner" element={<OwnerPages />} />
+      <Route
+        path="login/register"
+        // element={<Navigate replace to="/register" />}
+      />
+
+      <Route path="/owner" element={<OwnerPages />} />
+      <Route path="owner/offer" element={<OfferPages />} />
+      <Route path="owner/sellNewItem" element={<SellNewItem />} />
     </Routes>
   );
 }
