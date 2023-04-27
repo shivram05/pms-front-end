@@ -10,8 +10,7 @@ export default function CustomerNavigation() {
   const navigate = useNavigate();
 
   const handleclick = () => {
-    navigate("login");
-    console.log("clicke me");
+    navigate("/login");
   };
   return (
     <nav class="navbar navbar-expand-lg bg-body-tertiary">

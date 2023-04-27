@@ -23,13 +23,19 @@ function CustomerPropertyDetail() {
         <Modal.Body>
           <Form>
             {/* <Form.Label>Full Name</Form.Label> */}
-            <Form.Control type="text" placeholder="Full Name*" /> <br />
+            <Form.Control
+              type="text"
+              placeholder="Full Name*"
+              required
+              autoFocus
+            />{" "}
+            <br />
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               {/* <Form.Label>Email address</Form.Label> */}
               <Form.Control
                 type="email"
                 placeholder="name@example.com"
-                autoFocus
+                required
               />
             </Form.Group>
             <Form.Group
@@ -37,12 +43,13 @@ function CustomerPropertyDetail() {
               controlId="exampleForm.ControlTextarea1"
             >
               {/* <Form.Label>Phone</Form.Label> */}
-              <Form.Control type="text" placeholder="Phone*" />
+              <Form.Control type="text" placeholder="Phone* required" />
               <br />
               <Form.Control
                 as="textarea"
                 rows={3}
                 placeholder="Ask a question"
+                required
               />
             </Form.Group>
             <p>
@@ -74,10 +81,20 @@ function CustomerPropertyDetail() {
         <Modal.Body>
           <Form>
             {/* <Form.Label>Full Name</Form.Label> */}
-            <Form.Control type="number" placeholder="Offer Price*" required/> <br />
+            <Form.Control
+              type="number"
+              placeholder="Offer Price*"
+              autoFocus
+              required
+            />{" "}
+            <br />
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               {/* <Form.Label>Email address</Form.Label> */}
-              <Form.Control type="email" placeholder="name@example.com" required/>
+              <Form.Control
+                type="email"
+                placeholder="name@example.com"
+                required
+              />
             </Form.Group>
             <Form.Group
               className="mb-3"
