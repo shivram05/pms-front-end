@@ -1,17 +1,17 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-import OwnerContainer from "../../container/owner/OwnerContainer";
 import Footer from "../../components/Footer";
+import OfferContainer from "../../container/owner/OfferContainer";
 import Header from "./Header";
 
-function OwnerPages() {
+function OfferPages() {
   return (
     <Container>
       <Header />
-      <OwnerContainer />
+      <OfferContainer />
       <Footer />
     </Container>
   );
 }
 
-export default OwnerPages;
+export default OfferPages;

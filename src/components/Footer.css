@@ -1,0 +1,38 @@
+.footer-contents {
+    display: flex;
+    margin-left: 10rem;
+    margin-right: 10rem;
+    justify-content: space-between;
+    color: white;
+}
+
+.footer-sub-title {
+    display: block;
+    font-size: medium;
+    font-weight: 800;
+    border-bottom: 3px solid rgb(203, 255, 13);
+}
+
+.footer-sub-content {
+    margin-bottom: 1.5rem;
+}
+
+.title-sub-data {
+    margin-left: 1rem;
+}
+
+.App-footer {
+    
+    /* position: fixed;
+    bottom: 0; */
+    background-color: rgb(41, 51, 4);
+    padding: 10px;
+    width: 100%;
+    height: 15rem;
+    margin-top: 3rem;
+    padding: 3rem;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    position: fixed;
+    left: 0;
+    bottom:0;
+  }

@@ -12,17 +12,15 @@ export default function Navigation() {
   const handleclick = () => {
     navigate("login");
     console.log("clicke me");
-    
   };
   return (
-  
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="/">
+    <nav className="navbar navbar-expand-lg bg-body-tertiary">
+      <div className="container-fluid">
+        <a className="navbar-brand" href="/">
           Home
         </a>
         <button
-          class="navbar-toggler"
+          className="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarText"
@@ -30,36 +28,36 @@ export default function Navigation() {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarText">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/buy">
+        <div className="collapse navbar-collapse" id="navbarText">
+          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            <li className="nav-item">
+              <a className="nav-link active" aria-current="page" href="/buy">
                 Buy
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/seller">
+            <li className="nav-item">
+              <a className="nav-link" href="/seller">
                 Seller
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/property">
+            <li className="nav-item">
+              <a className="nav-link" href="/property">
                 Favourite Property
               </a>
             </li>
           </ul>
-          <span class="navbar-text">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link" href="/register">
+          <span className="navbar-text">
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+              <li className="nav-item">
+                <a className="nav-link" href="/register">
                   SIGN UP
                 </a>
               </li>
 
-              <li class="nav-item">
-                <a class="nav-link" href="/login">
+              <li className="nav-item">
+                <a className="nav-link" href="/login">
                   SIGN IN
                 </a>
               </li>
