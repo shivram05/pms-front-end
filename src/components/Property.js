@@ -15,7 +15,7 @@ const Property = (props) => {
           <Card.Title>Status : {props.propertyStatus}</Card.Title>
           <Card.Text className="text-limit" >
             Property Type : {props.propertyType} <br></br>
-            Located : {props.propertyLocationState}, {props.propertyLocationZip}
+            Located : {props.propertyLocationState} {props.propertyLocationZip}
           </Card.Text>
         </Card.Body>
       </Card>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import FeatureSection from "../components/FeatureSection";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
@@ -8,22 +8,23 @@ import SearchProperty from "../components/viewer/SearchProperty";
 export default function Dashboard() {
   return (
     <React.Fragment>
-      <div>
-        <Header />
-      </div>
-      <div>
-        <SearchProperty />
-      </div>
-      <div>
-        <PropertyContainer />
-      </div>
-      <div>
+        <div>
+          <Header />
+        </div>
+        <div>
+          <SearchProperty />
+        </div>
+        <div>
+          <PropertyContainer />
+        </div>
+        <div>
 
-        <FeatureSection />
-      </div>
-      <div>
-        <Footer />
-      </div>
+          <FeatureSection />
+        </div>
+        <div>
+          <Footer />
+        </div>
+      
     </React.Fragment>
   );
 }

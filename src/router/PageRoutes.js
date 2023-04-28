@@ -6,8 +6,6 @@ import RegisterPage from "../pages/RegisterPage";
 import PropertyDetailsPage from "../pages/PropertyDetailsPage";
 import ListOfPropertyDetailsPage from "../pages/ListOfPropertyDetailsPage";
 import OwnerPages from "../pages/owner/OwnerPages";
-
-// import CustomerComponent from "../components/customer/CustomerComponent";
 import CustomerPages from "../pages/customer/CustomerPages";
 import { ResetPassword } from "../components/resetpassword/ResetPassword";
 
@@ -16,6 +14,9 @@ import SellNewItem from "../pages/owner/SellNewItem";
 import CustomerPropertyDetailsPage from "../components/customer/CustomerPropertyDetailsPage";
 import { Toaster } from "react-hot-toast";
 import SuperUser from "../pages/admin/SuperUser";
+import SelectedFavorite from "../components/favorite/SelectedFavorite";
+import { FavoriteProperty } from "../components/favorite/FavoriteProperty";
+import FavoriteSection from "../components/favorite/FavoriteSection";
 
 export default function PageRoutes(props) {
   return (
@@ -29,10 +30,12 @@ export default function PageRoutes(props) {
         <Route exact path="property/:id" element={<PropertyDetailsPage />} />
         <Route
           exact
-          path="customer/property/:id"
+          path="/customer/property/:id"
           element={<CustomerPropertyDetailsPage />}
         />
 
+        <Route exact path = "customer/:id" element={<CustomerPropertyDetailsPage />}/>
+        <Route exact path = "/favoriteproperty" element = {<FavoriteSection/>}/>
         <Route exact path="buy" element={<ListOfPropertyDetailsPage />} />
 
         <Route
