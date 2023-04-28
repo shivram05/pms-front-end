@@ -33,17 +33,17 @@ export default function Navigation() {
         <div className="collapse navbar-collapse" id="navbarText">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="/buy">
+              <a className="nav-link active" aria-current="page" href="/login">
                 Buy
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/seller">
+              <a className="nav-link" href="/login">
                 Seller
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/property">
+              <a className="nav-link" href="/prcoperty">
                 Favourite Property
               </a>
             </li>

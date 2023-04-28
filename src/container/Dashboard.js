@@ -8,23 +8,18 @@ import SearchProperty from "../components/viewer/SearchProperty";
 export default function Dashboard() {
   return (
     <React.Fragment>
-        <div>
-          <Header />
-        </div>
-        <div>
-          <SearchProperty />
-        </div>
-        <div>
-          <PropertyContainer />
-        </div>
-        <div>
-
-          <FeatureSection />
-        </div>
-        <div>
-          <Footer />
-        </div>
-      
+      <div>
+        <Header />
+      </div>
+      <div>
+        <SearchProperty />
+      </div>
+      <div>
+        <PropertyContainer />
+      </div>
+      <div>
+        <FeatureSection />
+      </div>
     </React.Fragment>
   );
 }

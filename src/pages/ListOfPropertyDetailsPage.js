@@ -8,7 +8,7 @@ function ListOfPropertyDetailsPage() {
     <div>
       <Navigation/>
       <ListOfPropertyContainer />
-      <Footer />
+   
     </div>
   );
 }

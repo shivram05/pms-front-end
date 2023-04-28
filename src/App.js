@@ -11,14 +11,17 @@ function App() {
   const [favoriteItems, setfavoriteItems] = useState([]);
 
   return (
-    <Container>
-            <FavoriteProperty.Provider value={{ favoriteItems, setfavoriteItems }}>
 
-      <BrowserRouter>
-        <PageRoutes/>
-      </BrowserRouter>
-      </FavoriteProperty.Provider>
-    </Container>
+    <>
+      <Container>
+            <FavoriteProperty.Provider value={{ favoriteItems, setfavoriteItems }}>
+        <BrowserRouter>
+          <PageRoutes />
+        </BrowserRouter>
+              </FavoriteProperty.Provider>
+      </Container>
+      <Footer />
+    </>
   );
 }
 
