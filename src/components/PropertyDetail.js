@@ -10,113 +10,113 @@ function PropertyDetail() {
   const login = () => {
     navigate("/login");
   };
-  // const [showInquire, setShowInquire] = useState(false);
-  // const handleInquireClose = () => setShowInquire(false);
-  // const handleInquireShow = () => setShowInquire(true);
+  const [showInquire, setShowInquire] = useState(false);
+  const handleInquireClose = () => setShowInquire(false);
+  const handleInquireShow = () => setShowInquire(true);
 
-  // const [showOffer, setShowOffer] = useState(false);
-  // const handleOfferClose = () => setShowOffer(false);
-  // const handleOfferShow = () => setShowOffer(true);
+  const [showOffer, setShowOffer] = useState(false);
+  const handleOfferClose = () => setShowOffer(false);
+  const handleOfferShow = () => setShowOffer(true);
 
-  //Inquery form
-  // const InquireModal = () => {
-  //   return (
-  //     <Modal show={showInquire} onHide={handleInquireClose}>
-  //       <Modal.Header closeButton>
-  //         <Modal.Title>Inquery Form</Modal.Title>
-  //       </Modal.Header>
-  //       <Modal.Body>
-  //         <Form>
-  //           {/* <Form.Label>Full Name</Form.Label> */}
-  //           <Form.Control type="text" placeholder="Full Name*" autoFocus required /> <br />
-  //           <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-  //             {/* <Form.Label>Email address</Form.Label> */}
-  //             <Form.Control
-  //               type="email"
-  //               placeholder="name@example.com"
-  //               required
-  //             />
-  //           </Form.Group>
-  //           <Form.Group
-  //             className="mb-3"
-  //             controlId="exampleForm.ControlTextarea1"
-  //           >
-  //             {/* <Form.Label>Phone</Form.Label> */}
-  //             <Form.Control type="text" placeholder="Phone*" />
-  //             <br />
-  //             <Form.Control
-  //               as="textarea"
-  //               rows={3}
-  //               placeholder="Ask a question"
-  //               required
-  //             />
-  //           </Form.Group>
-  //           <p>
-  //             <em>
-  //               By proceeding, you consent to receive calls and texts at the
-  //               number you provided, including marketing by autodialer and
-  //               prerecorded and artificial voice, and email
-  //             </em>
-  //           </p>
-  //         </Form>
-  //       </Modal.Body>
-  //       <Modal.Footer>
-  //         <Button variant="primary" onClick={handleInquireClose}>
-  //           Send Email
-  //         </Button>
-  //       </Modal.Footer>
-  //     </Modal>
-  //   );
-  // };
+  // Inquery form
+  const InquireModal = () => {
+    return (
+      <Modal show={showInquire} onHide={handleInquireClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Inquery Form</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Form>
+            {/* <Form.Label>Full Name</Form.Label> */}
+            <Form.Control type="text" placeholder="Full Name*" autoFocus required /> <br />
+            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+              {/* <Form.Label>Email address</Form.Label> */}
+              <Form.Control
+                type="email"
+                placeholder="name@example.com"
+                required
+              />
+            </Form.Group>
+            <Form.Group
+              className="mb-3"
+              controlId="exampleForm.ControlTextarea1"
+            >
+              {/* <Form.Label>Phone</Form.Label> */}
+              <Form.Control type="text" placeholder="Phone*" />
+              <br />
+              <Form.Control
+                as="textarea"
+                rows={3}
+                placeholder="Ask a question"
+                required
+              />
+            </Form.Group>
+            <p>
+              <em>
+                By proceeding, you consent to receive calls and texts at the
+                number you provided, including marketing by autodialer and
+                prerecorded and artificial voice, and email
+              </em>
+            </p>
+          </Form>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="primary" onClick={handleInquireClose}>
+            Send Email
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    );
+  };
 
-  // //Function for Place Order form
+  //Function for Place Order form
 
-  // const PlaceOffer = () => {
-  //   return (
-  //     <Modal show={showOffer} onHide={handleOfferClose}>
-  //       <Modal.Header closeButton>
-  //         <Modal.Title>Place Offer</Modal.Title>
-  //       </Modal.Header>
-  //       <Modal.Body>
-  //         <Form>
-  //           {/* <Form.Label>Full Name</Form.Label> */}
-  //           <Form.Control
-  //             type="number"
-  //             placeholder="Offer Price*"
-  //             required
-  //           />{" "}
-  //           <br />
-  //           <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-  //             {/* <Form.Label>Email address</Form.Label> */}
-  //             <Form.Control
-  //               type="email"
-  //               placeholder="name@example.com"
-  //               required
-  //             />
-  //           </Form.Group>
-  //           <Form.Group
-  //             className="mb-3"
-  //             controlId="exampleForm.ControlTextarea1"
-  //           >
-  //             {/* <Form.Label>Phone</Form.Label> */}
-  //             <Form.Control type="text" placeholder="Phone*" required />
-  //             <br />
-  //           </Form.Group>
-  //         </Form>
-  //       </Modal.Body>
-  //       <Modal.Footer>
-  //         <Button variant="primary" onClick={"/"}>
-  //           Place Offer
-  //         </Button>
-  //       </Modal.Footer>
-  //     </Modal>
-  //   );
-  // };
+  const PlaceOffer = () => {
+    return (
+      <Modal show={showOffer} onHide={handleOfferClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Place Offer</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Form>
+            {/* <Form.Label>Full Name</Form.Label> */}
+            <Form.Control
+              type="number"
+              placeholder="Offer Price*"
+              required
+            />{" "}
+            <br />
+            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+              {/* <Form.Label>Email address</Form.Label> */}
+              <Form.Control
+                type="email"
+                placeholder="name@example.com"
+                required
+              />
+            </Form.Group>
+            <Form.Group
+              className="mb-3"
+              controlId="exampleForm.ControlTextarea1"
+            >
+              {/* <Form.Label>Phone</Form.Label> */}
+              <Form.Control type="text" placeholder="Phone*" required />
+              <br />
+            </Form.Group>
+          </Form>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="primary" onClick={"/"}>
+            Place Offer
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    );
+  };
 
   return (
     <div>
-      {/* <InquireModal />
-      <PlaceOffer /> */}
+      <InquireModal />
+      <PlaceOffer />
       <div className="property-card">
         <div className="property-card__image">
           <img
@@ -128,7 +128,7 @@ function PropertyDetail() {
           <Badge pill bg="success">
             Add To Favorite
           </Badge>{" "}
-          <Badge pill bg="dark" onClick={login}>
+          <Badge pill bg="dark" onClick={handleOfferShow}>
             Place Offer
           </Badge>{" "}
         </div>
@@ -163,7 +163,7 @@ function PropertyDetail() {
       </div>
       <br />
       <div>
-        <Button variant="info" onClick={login}>
+        <Button variant="info" onClick={handleInquireShow}>
           Inquire
         </Button>{" "}
       </div>

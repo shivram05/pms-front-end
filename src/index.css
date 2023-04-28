@@ -19,12 +19,18 @@ code {
   align-items: center;
 }
 
+.property-list{
+  list-style: none;
+}
+
 .card-container{
   display:flex;
     flex-wrap: wrap;
     margin: 10px;
     padding: 0px;
     margin-top: 20px;
+    gap: 20px;
+    
 }
 
 

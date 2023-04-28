@@ -25,7 +25,7 @@ export default function PageRoutes(props) {
         <Route exact path="login" element={<LoginPage />} />
         <Route exact path="register" element={<RegisterPage />} />
 
-      <Route exact path="property/:id" element={<PropertyDetailsPage />} />
+      <Route exact path="property/:id" element={<CustomerPropertyDetailsPage />} />
       <Route
         exact
         path="customer/property/:id"
