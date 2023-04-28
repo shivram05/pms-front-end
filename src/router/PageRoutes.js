@@ -23,16 +23,17 @@ export default function PageRoutes(props) {
       <Routes>
         <Route exact path="/" element={<Dashboard />} />
         <Route exact path="login" element={<LoginPage />} />
+        <Route exact path="/:id" element={<PropertyDetailsPage />} />
         <Route exact path="register" element={<RegisterPage />} />
 
-      <Route exact path="property/:id" element={<PropertyDetailsPage />} />
+      <Route exact path="property/:id" element={<CustomerPropertyDetailsPage />} />
       <Route
         exact
         path="customer/property/:id"
         element={<CustomerPropertyDetailsPage />}
       />
 
-      <Route exact path="buy" element={<ListOfPropertyDetailsPage />} />
+        <Route exact path="buy" element={<ListOfPropertyDetailsPage />} />
 
         <Route
           exact
@@ -42,24 +43,25 @@ export default function PageRoutes(props) {
 
         <Route exact path="seller" element={<LoginPage />} />
 
-      <Route exact path="seller/register" element={<RegisterPage />} />
+        <Route exact path="seller/register" element={<RegisterPage />} />
 
-      <Route
-        path="login/register"
-        element={<Navigate replace to="/register" />}
-      />
+        <Route
+          path="login/register"
+          element={<Navigate replace to="/register" />}
+        />
 
-      <Route path="owner" element={<OwnerPages />} />
+        <Route path="owner" element={<OwnerPages />} />
 
       <Route path="customer" element={<CustomerPages />} />
+      <Route path="/redirecttocustomer"  element={<Navigate replace to="/customer" />}/>
 
-      <Route path="reset" element={<ResetPassword />} />
+        <Route path="reset" element={<ResetPassword />} />
 
-      <Route exact path="owner" element={<OwnerPages />} />
-      <Route
-        path="login/register"
+        <Route exact path="owner" element={<OwnerPages />} />
+        <Route
+          path="login/register"
         // element={<Navigate replace to="/register" />}
-      />
+        />
 
         <Route path="/owner" element={<OwnerPages />} />
         <Route path="owner/offer" element={<OfferPages />} />
