@@ -17,12 +17,8 @@ export default function Dashboard() {
       <div>
         <PropertyContainer />
       </div>
-      {/* <div>
-
-        <FeatureSection />
-      </div> */}
       <div>
-        <Footer />
+        <FeatureSection />
       </div>
     </React.Fragment>
   );

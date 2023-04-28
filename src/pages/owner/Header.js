@@ -23,8 +23,13 @@ const Header = () => {
           <span className="navbar-text">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link" href="/register">
-                  Logout
+                <a className="nav-link" href="/reset">
+                  RESET PASSWORD
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="/">
+                  SIGN OUT
                 </a>
               </li>
             </ul>

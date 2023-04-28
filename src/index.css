@@ -33,6 +33,9 @@ code {
     
 }
 
+#root {
+  height: 100vh;
+}
 
 .Product {
   display: flex;

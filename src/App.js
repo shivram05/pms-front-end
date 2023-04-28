@@ -10,11 +10,14 @@ import PageRoutes from "./router/PageRoutes";
 
 function App() {
   return (
-    <Container>
-      <BrowserRouter>
-        <PageRoutes/>
-      </BrowserRouter>
-    </Container>
+    <>
+      <Container>
+        <BrowserRouter>
+          <PageRoutes />
+        </BrowserRouter>
+      </Container>
+      <Footer />
+    </>
   );
 }
 

@@ -8,8 +8,9 @@ function OfferPages() {
   return (
     <Container>
       <Header />
+      
       <OfferContainer />
-      <Footer />
+     
     </Container>
   );
 }

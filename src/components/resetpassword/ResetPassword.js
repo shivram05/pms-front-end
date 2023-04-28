@@ -83,13 +83,12 @@ export const ResetPassword = () => {
           </label>
           <br />
 
-          {!passwordMatch && <div id="passwordMessage">Password does not match.</div>}
+          {!passwordMatch && (
+            <div id="passwordMessage">Password does not match.</div>
+          )}
           <Button as="input" type="submit" value="Reset" />
         </div>
       </form>
-      <div>
-        <Footer />
-      </div>
     </div>
   );
 };
