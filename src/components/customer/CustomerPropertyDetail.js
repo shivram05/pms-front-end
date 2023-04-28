@@ -7,6 +7,7 @@ import toast from "react-hot-toast";
 import axios from "axios";
 import {useParams} from 'react-router';
 import { useNavigate } from 'react-router-dom';
+import Cookies from 'js-cookie';
 
 
 function CustomerPropertyDetail() {
@@ -18,7 +19,7 @@ function CustomerPropertyDetail() {
   const handleOfferClose = () => setShowOffer(false);
   const handleOfferShow = () => setShowOffer(true);
 
-
+const cookie = JSON.parse(Cookies.get("userData"));
 
 //HANDLE OFFER SUBMIT
   const inputPriceRef = useRef();
@@ -28,17 +29,20 @@ function CustomerPropertyDetail() {
   console.log(params.id)
   const handleOfferSubmit = (event) => {
     event.preventDefault();
+
+    
     const inputPriceValue = inputPriceRef.current.value;
     const data = {
       "submissionDate": new Date(),
       "offeredPrice": inputPriceValue,
       "user": {
-        "userId": 6
+        "userId": cookie.userId
       },
       "property": {
         "propertyId": params.id
       }
-    };
+
+    };console.log(data)
     axios.post('http://localhost:8080/api/v1/offers/customer/saveOffer', data)
       .then((res) => {
         console.log(res.data);

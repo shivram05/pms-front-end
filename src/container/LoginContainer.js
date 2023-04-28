@@ -42,7 +42,7 @@ function LoginContainer() {
   function doSuccessfulOperationLogin(loginResponse) {
     const userData = {
       accessToken: loginResponse.accessToken,
-      mancheId: loginResponse.uid,
+      userId: loginResponse.uid,
       loggedIn: true
     };
     // console.log(userData);
