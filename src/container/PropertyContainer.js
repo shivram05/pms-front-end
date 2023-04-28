@@ -1,63 +1,49 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Property from "../components/Property";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import PropertyCard from "../components/PropertyCard/PropertyCard";
 
-const propertyData = [
-  {
-    id: 101,
-    name: "test",
-    description: "test deacripitn",
-    price: "$1200",
-    location: "test",
-  },
-  {
-    id: 102,
-    name: "test",
-    description: "test deacripitn",
-    price: "$1200",
-    location: "test",
-  },
-  {
-    id: 103,
-    name: "test",
-    description: "test deacripitn",
-    price: "$1200",
-    location: "test",
-  },
-  {
-    id: 104,
-    name: "test",
-    description: "test deacripitn",
-    price: "$1200",
-    location: "test",
-  },
-];
-
-const products = propertyData.map((p) => {
-  return (
-    <Link to={`property/${p.id}`} key={p.id} >
-      <Property
-        name={p.name}
-        description={p.description}
-        price={p.price}
-        id={p.id}
-      />
-    </Link>
-  );
-});
-
-// useEffect(() => {
-//     fetchData();
-//   }, []);
 function PropertyContainer() {
+
+  const [properties, setProperties] = useState([]);
+
+  useEffect(() => {
+    axios.get('http://localhost:8080/api/v1/properties/')
+    .then((response) => {
+      console.log("Response data: " + response.data)
+      setProperties(response.data)
+    })
+    .catch((error)=>{console.log("Error", error)})
+  },[])
+
+  const fetchData = properties.map((s)=>{
+    console.log(s);
+  });
   return (
-    <>
-      <div>
-        <h1>Heading</h1>
-        <div className="proterty-container">{products}</div>
-      </div>
-    </>
+    <div>
+      <h1>Property List</h1>
+      <ul className="property-list">
+      <div className="card-container">
+      {properties.map((property) => (
+          <li key={property.propertyDetail.pdId}>
+          <PropertyCard 
+            image={property.propertyImages[0].imageLocation}
+            price={property.propertyDetail.propertyPrice}
+            address = {property.address}
+            propertyStatus = {property.statusEnum}
+            propertyType={property.propertyDetail.propertyType}
+            id={property.propertyDetail.pdId}
+          />
+
+          </li>
+        ))}
+        </div>
+      </ul>
+    </div>
   );
 }
+
+
 
 export default PropertyContainer;
