@@ -13,9 +13,12 @@ import "./Footer.css";
 export default function Footer() {
   return (
     <footer className="App-footer">
+      <div className="last-footer">
+        WAA Project: Property Management System{" "}
+      </div>
       <div className="footer-contents">
         <div className="left">
-          <p className="footer-sub-title">Shivram Realstate</p>
+          <p className="footer-sub-title">WAA-Final-Project</p>
           <div className="footer-sub-content">
             <span>
               <MdLocationPin />
@@ -33,7 +36,7 @@ export default function Footer() {
               <MdCopyright />
             </span>
             <span className="title-sub-data">
-              Shivram Realstate All Rights Reserved
+              WAA-Final-Projecte All Rights Reserved
             </span>
           </div>
         </div>
@@ -44,21 +47,23 @@ export default function Footer() {
               <MdFacebook />
             </span>
             <span className="title-sub-data">
-              facebook.com/shivramrealstate
+              facebook.com/WAA-Final-Project
             </span>
           </div>
           <div className="footer-sub-content">
             <span>
               <FaTwitter />
             </span>
-            <span className="title-sub-data">twitter.com/shivramrealstate</span>
+            <span className="title-sub-data">
+              twitter.com/WAA-Final-Project
+            </span>
           </div>
           <div className="footer-sub-content">
             <span>
               <RiInstagramFill />
             </span>
             <span className="title-sub-data">
-              instagram.com/shivramrealstate
+              instagram.com/WAA-Final-Project
             </span>
           </div>
         </div>

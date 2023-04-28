@@ -9,7 +9,6 @@ function OwnerPages() {
     <Container>
       <Header />
       <OwnerContainer />
-      <Footer />
     </Container>
   );
 }

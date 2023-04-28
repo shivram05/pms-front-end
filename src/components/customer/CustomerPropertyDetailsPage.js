@@ -8,7 +8,7 @@ function CustomerPropertyDetailsPage() {
     <div>
       <CustomerNavigation />
       <CustomerPropertyDetail/>
-      {/* <Footer /> */}
+   
     </div>
   )
 }

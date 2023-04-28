@@ -37,7 +37,7 @@ export default CustomerContainer;
 //       <div>
 //         <FeatureSection />
 //       </div>
-//       <div>{/* <Footer /> */}</div>
+
 //     </React.Fragment>
 //   );
 // }

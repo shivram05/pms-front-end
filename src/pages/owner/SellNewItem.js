@@ -1,16 +1,54 @@
-import React from "react";
-import { Button } from "react-bootstrap";
-import Form from "react-bootstrap/Form";
+import React, { useState } from "react";
+import { Button, Container, Form } from "react-bootstrap";
+// import Form from "react-bootstrap/Form";
 import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router";
 import Header from "./Header";
+import Footer from "../../components/Footer";
+import axios from "axios";
 const SellNewItem = () => {
   const navigate = useNavigate();
 
-  const placeNewItem = () => {
-    toast.success("Item placed for Sell");
+  const [formData, setFormData] = useState({
+    city: "",
+    state: "",
+    zip: "",
+    country: "",
+    size: "",
+    homeSize: "",
+    year: "",
+    noOfRooms: "",
+    noOfFullBathrooms: "",
+    noOfPartialBathrooms: "",
+    homeCondition: "",
+    hasTenent: "",
+    propertyPrice: "",
+    mortgageBalance: "",
+  });
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    axios
+      .post("http://localhost:8080/api/v1/properties/", formData)
+      .then((response) => {
+        console.log(response);
+        toast.success("Item placed for Sell");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
     navigate("/owner");
   };
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
   const back = () => {
     navigate("/owner");
   };
@@ -20,157 +58,202 @@ const SellNewItem = () => {
       <Header />
       <div>
         SellNewItem
-        <form
-          // th:action="@{/properties/save}"
-          // th:object="${property}"
-          method="post"
-        >
+        <Form onSubmit={handleSubmit}>
           <div className="form-group">
             <h5>Address</h5>
-            <label for="city">City:</label>
+            <label htmlFor="city">City:</label>
             <input
               type="text"
               className="form-control"
-              // th:field="*{address}"
+              name="city"
               id="city"
+              value={formData.city}
+              onChange={handleChange}
+              required
             />
           </div>
           <div className="form-group">
-            <label for="state">State:</label>
+            <label htmlFor="state">State:</label>
             <input
               type="text"
               className="form-control"
-              // th:field="*{propertyDetail}"
+              name="state"
               id="state"
+              value={formData.state}
+              onChange={handleChange}
+              required
             />
           </div>
           <div className="form-group">
-            <label for="zip">Zip Code:</label>
+            <label htmlFor="zip">Zip Code:</label>
             <input
               type="text"
               className="form-control"
-              // th:field="*{propertyDetail}"
+              name="zip"
               id="zip"
+              value={formData.zip}
+              onChange={handleChange}
+              required
             />
           </div>
           <div className="form-group">
-            <label for="country">Country:</label>
+            <label htmlFor="country">Country:</label>
             <input
               type="text"
               className="form-control"
-              // th:field="*{propertyImages}"
+              name="country"
               id="country"
+              required
+              value={formData.country}
+              onChange={handleChange}
             />
           </div>
           <div className="form-group">
             <h5>Property Details</h5>
-            <label for="size">Size:</label>
+            <label htmlFor="size">Size:</label>
             <input
               type="text"
               className="form-control"
-              // th:field="*{address}"
+              name="size"
               id="size"
+              value={formData.size}
+              onChange={handleChange}
+              required
             />
           </div>
           <div className="form-group">
-            <label for="homeSize">Home Size:</label>
+            <label htmlFor="homeSize">Home Size:</label>
             <input
               type="text"
               className="form-control"
-              // th:field="*{propertyDetail}"
+              name="homeSize"
               id="homeSize"
+              value={formData.homeSize}
+              onChange={handleChange}
+              required
             />
           </div>
           <div className="form-group">
-            <label for="year">Year Build:</label>
+            <label htmlFor="year">Year Build:</label>
             <input
               type="text"
               className="form-control"
-              // th:field="*{propertyDetail}"
+              name="year"
               id="year"
+              value={formData.year}
+              onChange={handleChange}
+              required
             />
           </div>
           <div className="form-group">
-            <label for="noOfRooms">No of Rooms:</label>
+            <label htmlFor="noOfRooms">No of Rooms:</label>
             <input
               type="text"
               className="form-control"
-              // th:field="*{propertyImages}"
+              name="noOfRooms"
               id="noOfRooms"
+              value={formData.noOfRooms}
+              onChange={handleChange}
+              required
             />
           </div>
           <div className="form-group">
-            <label for="noOfFullBathrooms">No of Full Bathrooms:</label>
+            <label htmlFor="noOfFullBathrooms">No of Full Bathrooms:</label>
             <input
               type="text"
               className="form-control"
-              // th:field="*{propertyDetail}"
+              name="noOfFullBathrooms"
               id="noOfFullBathrooms"
+              value={formData.noOfFullBathrooms}
+              onChange={handleChange}
+              required
             />
           </div>
           <div className="form-group">
-            <label for="noOfPartialBathrooms">No of Partial Bathrooms:</label>
+            <label htmlFor="noOfPartialBathrooms">
+              No of Partial Bathrooms:
+            </label>
             <input
               type="text"
               className="form-control"
-              // th:field="*{propertyImages}"
+              name="noOfPartialBathrooms"
               id="noOfPartialBathrooms"
+              value={formData.noOfPartialBathrooms}
+              onChange={handleChange}
+              required
             />
           </div>
           <div className="form-group">
-            <label for="homeCondition">Condition of Home:</label>
+            <label htmlFor="homeCondition">Condition of Home:</label>
             <input
               type="text"
               className="form-control"
-              // th:field="*{propertyDetail}"
+              name="homeCondition"
               id="homeCondition"
+              value={formData.homeCondition}
+              onChange={handleChange}
+              required
             />
           </div>
           <div className="form-group">
-            <label for="hasTenent">Has Tenent:</label>
+            <label htmlFor="hasTenant">Has Tenant:</label>
             <input
               type="text"
               className="form-control"
-              // th:field="*{propertyDetail}"
-              id="hasTenent"
+              name="hasTenant"
+              id="hasTenant"
+              value={formData.hasTenant}
+              onChange={handleChange}
+              required
             />
           </div>
           <div className="form-group">
-            <h5>Finincial Details</h5>
-            <label for="propertyPrice">Price of Property:</label>
+            <h5>Property Price</h5>
+            <label htmlFor="price">Price:</label>
             <input
               type="text"
               className="form-control"
-              // th:field="*{address}"
-              id="propertyPrice"
+              name="price"
+              id="price"
+              value={formData.price}
+              onChange={handleChange}
+              required
             />
           </div>
           <div className="form-group">
-            <label for="mortgageBalance">Mortgage Balance:</label>
+            <label htmlFor="mortgageBalance">Mortgage Balance:</label>
             <input
               type="text"
               className="form-control"
-              // th:field="*{propertyDetail}"
+              name="mortgageBalance"
               id="mortgageBalance"
+              value={formData.mortgageBalance}
+              onChange={handleChange}
+              required
             />
           </div>
-          <Form.Group controlId="formFileSm" className="mb-3">
-            <h5>Property Images</h5>
-            <Form.Control type="file" size="sm" />
-            {/* console.log(formFileSm) */}
-
-            {/* Work on file name and image uploads */}
-          </Form.Group>
-          <Button onClick={placeNewItem} className="btn btn-primary">
+          <div className="form-group">
+            <label htmlFor="propertyImage">Property Image:</label>
+            <input
+              type="file"
+              className="form-control"
+              name="propertyImage"
+              id="propertyImage"
+              //work Hers for image and uncomment following
+              //
+              // value={formData.propertyImage}
+              // onChange={handleChange}
+              // required
+            />
+          </div>
+          <button type="submit" className="btn btn-primary">
             Submit
-          </Button>{" "}
+          </button>
           &nbsp;&nbsp;&nbsp;
-          <Button onClick={back} className="btn btn-primary">
+          <button onClick={back} className="btn btn-primary">
             Back
-          </Button>{" "}
-          <br />
-          <text>Click Submit to Place Item on Sell</text>
-        </form>
+          </button>
+        </Form>
       </div>
     </>
   );

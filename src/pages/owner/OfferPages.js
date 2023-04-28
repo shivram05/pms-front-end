@@ -9,7 +9,7 @@ function OfferPages() {
     <Container>
       <Header />
       <OfferContainer />
-      <Footer />
+     
     </Container>
   );
 }

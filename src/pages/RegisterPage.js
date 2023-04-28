@@ -7,7 +7,7 @@ function RegisterPage() {
   return (
     <Container>
       <RegisterContainer />
-      {/* <Footer/> */}
+  
     </Container>
   );
 }
