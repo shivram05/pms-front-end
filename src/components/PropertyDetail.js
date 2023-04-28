@@ -1,15 +1,22 @@
 import Button from "react-bootstrap/Button";
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import Badge from "react-bootstrap/Badge";
-import { useNavigate } from "react-router";
+import { useNavigate, useParams } from "react-router";
+import { FavoriteProperty } from "./FavoriteProperty";
+import axios from "axios";
 
 function PropertyDetail() {
   const navigate = useNavigate();
+  const params = useParams();
+  const [propertyDetails, setPropertyDetails] = useState({});
+
+  const [favoriteProperty, setFavoriteProperty] = useContext(FavoriteProperty);
   const login = () => {
     navigate("/login");
   };
+
   const [showInquire, setShowInquire] = useState(false);
   const handleInquireClose = () => setShowInquire(false);
   const handleInquireShow = () => setShowInquire(true);
@@ -136,29 +143,44 @@ function PropertyDetail() {
           <p>Status : </p>
         </div>
 
-        <div className="property-details">
-          <p>Street :</p>
-          <p>City : </p>
-          <p>State : </p>
-          <p>Zip : </p>
-          <p>Country : </p>
-          <p>Property Type :</p>
+              <p>Street : {propertyDetails.address.street}</p>
+              <p>City :  {propertyDetails.address.city}</p>
+              <p>State : {propertyDetails.address.state}</p>
+              <p>Zip :   {propertyDetails.address.zip} </p>
+              <p>Country : {propertyDetails.address.country}</p>
+              <p>Property Type : {propertyDetails.propertyDetail.propertyType}</p>
+            </div>)}
+
+          {propertyDetails.propertyDetail && (
+            <div className="property-details">
+              <p>size : {propertyDetails.propertyDetail.lotSize}</p>
+              <p>homeSize : {propertyDetails.propertyDetail.homeSize}</p>
+              <p>Year : {propertyDetails.propertyDetail.yearBuild}</p>
+              <p>Number Of Rooms : {propertyDetails.propertyDetail.roomNum}</p>
+              <p>Number of Full Bathrooms : {propertyDetails.propertyDetail.fullBathroomNum}</p>
+              <p>Number of Partial Bathrooms : {propertyDetails.propertyDetail.partialBathroomNum}</p>
+            </div>)}
+          {propertyDetails.propertyDetail && (
+            <div className="property-details">
+              <p>Property Price : {propertyDetails.propertyDetail.propertyPrice}</p>
+              <p>MortgageBalance : {propertyDetails.propertyDetail.mortgageBalance}</p>
+              <p>Home Condition : {propertyDetails.propertyDetail.homeCondition}</p>
+              <p>Has Tentent : {propertyDetails.propertyDetail.hasTenant? 'Yes' : 'NO'}</p>
+            </div>)}
+        </div>
+        <br />
+        <div>
+          <Button variant="info" onClick={login}>
+            Inquire
+          </Button>{" "}
         </div>
 
-        <div className="property-details">
-          <p>size : </p>
-          <p>homeSize : </p>
-          <p>Year : </p>
-          <p>Number Of Rooms : </p>
-          <p>Number of Full Bathrooms : </p>
-          <p>Number of Partial Bathrooms :</p>
-        </div>
-
-        <div className="property-details">
-          <p>Property Price : </p>
-          <p>MortgageBalance : </p>
-          <p>Home Condition : </p>
-          <p>Has Tentent : </p>
+        <div>
+        <Button onClick={()=>{
+          navigate("/");
+        }}>
+            Back
+          </Button>
         </div>
       </div>
       <br />
