@@ -17,10 +17,10 @@ export default function Dashboard() {
       <div>
         <PropertyContainer />
       </div>
-      <div>
+      {/* <div>
 
         <FeatureSection />
-      </div>
+      </div> */}
       <div>
         <Footer />
       </div>
