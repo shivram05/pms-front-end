@@ -52,6 +52,7 @@ export default function PageRoutes(props) {
       <Route path="owner" element={<OwnerPages />} />
 
       <Route path="customer" element={<CustomerPages />} />
+      <Route path="/redirecttocustomer"  element={<Navigate replace to="/customer" />}/>
 
       <Route path="reset" element={<ResetPassword />} />
 
