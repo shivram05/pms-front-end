@@ -1,10 +1,8 @@
 import Button from "react-bootstrap/Button";
 import React, { useContext, useEffect, useState } from "react";
-import Form from "react-bootstrap/Form";
-import Modal from "react-bootstrap/Modal";
 import Badge from "react-bootstrap/Badge";
 import { useNavigate, useParams } from "react-router";
-import { FavoriteProperty } from "./FavoriteProperty";
+import { FavoriteProperty } from "../components/favorite/FavoriteProperty";
 import axios from "axios";
 
 function PropertyDetail() {
@@ -12,14 +10,23 @@ function PropertyDetail() {
   const params = useParams();
   const [propertyDetails, setPropertyDetails] = useState({});
 
-  const [favoriteProperty, setFavoriteProperty] = useContext(FavoriteProperty);
+  const {favoriteProperty, setFavoriteProperty} = useContext(FavoriteProperty);
   const login = () => {
     navigate("/login");
   };
 
-  const [showInquire, setShowInquire] = useState(false);
-  const handleInquireClose = () => setShowInquire(false);
-  const handleInquireShow = () => setShowInquire(true);
+  useEffect(() => {
+    if (params.propertyId) {
+      axios.get("http://localhost:8080/api/v1/properties/" + params.propertyId)
+        .then(data => {
+          setPropertyDetails(data.data);
+          console.log(data.data);
+        })
+        .catch(err => {
+          console.log(err);
+        })
+    }
+  }, [params.id])
 
   const [showOffer, setShowOffer] = useState(false);
   const handleOfferClose = () => setShowOffer(false);
@@ -170,9 +177,9 @@ function PropertyDetail() {
         </div>
         <br />
         <div>
-          <Button variant="info" onClick={login}>
-            Inquire
-          </Button>{" "}
+           <Button variant="info" onClick={handleInquireShow}>
+          Inquire
+        </Button>{" "}
         </div>
 
         <div>
@@ -183,13 +190,10 @@ function PropertyDetail() {
           </Button>
         </div>
       </div>
-      <br />
-      <div>
-        <Button variant="info" onClick={handleInquireShow}>
-          Inquire
-        </Button>{" "}
-      </div>
-    </div>
+  }   
+  return (
+    propertyDetailsDisplay
+
   );
 }
 
