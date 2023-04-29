@@ -7,6 +7,7 @@ import { useNavigate } from "react-router";
 import Property from "../Property";
 import '../../cssfile/property.css';
 import { Link } from "react-router-dom";
+import PropertyCard from "../PropertyCard/PropertyCard";
 
 function SearchProperty() {
 
@@ -61,12 +62,22 @@ function SearchProperty() {
       return (
         <div key={p.propertyId} className="proterty-container">
           <Link to={`${p.propertyId}`}>
-            <Property propertyType={p.propertyDetail.propertyType} 
+            {/* <PropertyCard propertyType={p.propertyDetail.propertyType} 
                       propertyLocationState={p.address.state}
                       propertyLocationZip = {p.address.zip}
                       propertyStatus = {p.statusEnum}
                       propertyImage = {p.propertyImages.imageLocation}
-            /></Link>
+            /> */}
+
+          <PropertyCard 
+            image={p.propertyImages[0].imageLocation}
+            price={p.propertyDetail.propertyPrice}
+            address = {p.address}
+            propertyStatus = {p.statusEnum}
+            propertyType={p.propertyDetail.propertyType}
+            id={p.propertyDetail.pdId}
+          />
+            </Link>
         </div>
       )
 

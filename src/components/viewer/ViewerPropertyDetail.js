@@ -16,7 +16,7 @@ import toast from "react-hot-toast";
 // import { useNavigate } from 'react-router-dom';
 import Cookies from 'js-cookie';
 
-function CustomerPropertyDetail() {
+function ViewerPropertyDetail() {
 
  
 
@@ -64,28 +64,31 @@ function CustomerPropertyDetail() {
   const handleOfferSubmit = (event) => {
     event.preventDefault();
 
-    console.log("offer clicekd")
+            toast.success("To place offer, please login.")
 
-    const inputPriceValue = inputPriceRef.current.value;
-    const data = {
-      "submissionDate": new Date(),
-      "offeredPrice": inputPriceValue,
-      "user": {
-        "userId": 2 //Customer user ID
-      },
-      "property": {
-        "propertyId": paramsOffer.id
-      }
+            navigate("/login")
+    // console.log("offer clicekd")
 
-    }; console.log(data)
-    axios.post('http://localhost:8080/api/v1/offers/customer/saveOffer', data)
-      .then((res) => {
-        console.log(res.data);
-        toast.success("Your offer has been sent to the owner.")
-        nav("/customer");
-      }).catch((err) => {
-        console.log("Error", err.message());
-      })
+    // const inputPriceValue = inputPriceRef.current.value;
+    // const data = {
+    //   "submissionDate": new Date(),
+    //   "offeredPrice": inputPriceValue,
+    //   "user": {
+    //     "userId": 6
+    //   },
+    //   "property": {
+    //     "propertyId": paramsOffer.id
+    //   }
+
+    // }; console.log(data)
+    // axios.post('http://localhost:8080/api/v1/offers/customer/saveOffer', data)
+    //   .then((res) => {
+    //     console.log(res.data);
+    //     toast.success("Your offer has been sent to the owner.")
+    //     nav("/customer");
+    //   }).catch((err) => {
+    //     console.log("Error", err.message());
+    //   })
 
   };
 
@@ -96,39 +99,42 @@ function CustomerPropertyDetail() {
   const inputMessageRef = useRef();
   const paramsInq = useParams();
   const handleInquireSubmit = (event) => {
-    event.preventDefault();
-    const fullName = inputFullNameRef.current.value;
-    const email = inputEmailRef.current.value;
-    const phone = inputPhoneRef.current.value;
-    const message = inputMessageRef.current.value;
 
-    console.log(fullName);
-    console.log(email);
-    console.log(phone);
-    console.log(message);
+    toast.success("To Submit enquiry please login");
+    navigate("/login")
+    // event.preventDefault();
+    // const fullName = inputFullNameRef.current.value;
+    // const email = inputEmailRef.current.value;
+    // const phone = inputPhoneRef.current.value;
+    // const message = inputMessageRef.current.value;
 
-    const data = {
-      "fullName": fullName,
-      "email": email,
-      "contact": phone,
-      "message": message,
-      "messageTime": new Date(),
-      "property": {
-        "propertyId": paramsInq.id
-      }
-    };
+    // console.log(fullName);
+    // console.log(email);
+    // console.log(phone);
+    // console.log(message);
 
-    console.log(data);
-    axios.post('http://localhost:8080/api/v1/enquiry', data)
-      .then((response) => {
-        console.log(response.data);
-        toast.success("Your enquiry has been sent.");
-        nav("/customer");
+    // const data = {
+    //   "fullName": fullName,
+    //   "email": email,
+    //   "contact": phone,
+    //   "message": message,
+    //   "messageTime": new Date(),
+    //   "property": {
+    //     "propertyId": paramsInq.id
+    //   }
+    // };
 
-      })
-      .catch((err) => {
-        console.log("Error", err)
-      })
+    // console.log(data);
+    // axios.post('http://localhost:8080/api/v1/enquiry', data)
+    //   .then((response) => {
+    //     console.log(response.data);
+    //     toast.success("Your enquiry has been sent.");
+    //     nav("/customer");
+
+    //   })
+    //   .catch((err) => {
+    //     console.log("Error", err)
+    //   })
   };
 
   //Inquery form
@@ -322,4 +328,4 @@ return ( <div>
   // return propertyDetailsDisplay;
 
 }
-export default CustomerPropertyDetail;
+export default ViewerPropertyDetail;

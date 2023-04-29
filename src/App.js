@@ -5,6 +5,7 @@ import "./App.css";
 import PageRoutes from "./router/PageRoutes";
 import { useState } from "react";
 import { FavoriteProperty } from "./components/favorite/FavoriteProperty";
+import Footer from "./components/Footer";
 
 function App() {
 

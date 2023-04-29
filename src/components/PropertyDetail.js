@@ -4,13 +4,15 @@ import Badge from "react-bootstrap/Badge";
 import { useNavigate, useParams } from "react-router";
 import { FavoriteProperty } from "../components/favorite/FavoriteProperty";
 import axios from "axios";
+import { Modal } from "react-bootstrap";
+import { Form } from "react-router-dom";
 
 function PropertyDetail() {
   const navigate = useNavigate();
   const params = useParams();
   const [propertyDetails, setPropertyDetails] = useState({});
 
-  const {favoriteProperty, setFavoriteProperty} = useContext(FavoriteProperty);
+  const { favoriteProperty, setFavoriteProperty } = useContext(FavoriteProperty);
   const login = () => {
     navigate("/login");
   };
@@ -114,7 +116,7 @@ function PropertyDetail() {
             >
               {/* <Form.Label>Phone</Form.Label> */}
               <Form.Control type="text" placeholder="Phone*" required />
-              <br />
+              {/* <br /> */}
             </Form.Group>
           </Form>
         </Modal.Body>
@@ -128,6 +130,7 @@ function PropertyDetail() {
   };
 
   return (
+    <div>
     <div>
       <InquireModal />
       <PlaceOffer />
@@ -175,12 +178,14 @@ function PropertyDetail() {
               <p>Has Tentent : {propertyDetails.propertyDetail.hasTenant? 'Yes' : 'NO'}</p>
             </div>)}
         </div>
-        <br />
-        <div>
+       
+        // <div>
+           <br />
            <Button variant="info" onClick={handleInquireShow}>
           Inquire
         </Button>{" "}
-        </div>
+        
+      // </div>
 
         <div>
         <Button onClick={()=>{
@@ -189,10 +194,10 @@ function PropertyDetail() {
             Back
           </Button>
         </div>
-      </div>
-  }   
-  return (
-    propertyDetailsDisplay
+  )
+  </div>
+  // return (
+  //   propertyDetailsDisplay
 
   );
 }

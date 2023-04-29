@@ -34,6 +34,8 @@ export default function PageRoutes(props) {
         element={<CustomerPropertyDetailsPage />}
       />
 
+      {/* <Route exact path="customers"  */}
+
         <Route exact path = "customer/:id" element={<CustomerPropertyDetailsPage />}/>
         <Route exact path = "/favoriteproperty" element = {<FavoriteSection/>}/>
         <Route exact path="buy" element={<ListOfPropertyDetailsPage />} />

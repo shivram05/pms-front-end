@@ -131,9 +131,7 @@ export const ResetPassword = () => {
         <Button as="input" type="submit" value="Reset" />
       </div>
     </form>
-    <div>
-      <Footer />
-    </div>
+  
   </div></>;
 
   return (

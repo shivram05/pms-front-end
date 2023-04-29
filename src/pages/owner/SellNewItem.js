@@ -10,20 +10,45 @@ const SellNewItem = () => {
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
-    city: "",
-    state: "",
-    zip: "",
-    country: "",
-    size: "",
-    homeSize: "",
-    year: "",
-    noOfRooms: "",
-    noOfFullBathrooms: "",
-    noOfPartialBathrooms: "",
-    homeCondition: "",
-    hasTenent: "",
-    propertyPrice: "",
-    mortgageBalance: "",
+    
+      "address": {
+          "street": "Fairfield",
+          "city": "Fairfield",
+          "state": "IA, Iowa",
+          "zip": "52557",
+          "country": "United States"
+      },
+      "statusEnum": "AVAILABLE",
+      "propertyDetail": {
+          "address": {
+              "city": "Fairfield",
+              "country": "United States",
+              "state": "IA, Iowa",
+              "zip": "52557",
+              "street": "Fairfield"
+          },
+          "hasTenant": true,
+          "homeCondition": "PERFECT",
+          "homeSize": 3,
+          "mortgageBalance": 2,
+          "fullBathroomNum": 3,
+          "partialBathroomNum": 1,
+          "roomNum": 3,
+          "propertyPrice": 2343,
+          "lotSize": 1,
+          "yearBuild": "1993-05-30",
+          "propertyType": "CONDO"
+      },
+      "owner": {
+          "userId": 1
+      },
+      "propertyImages": [
+          {
+              "imageName": "manga.jpg",
+              "imageLocation": "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80"
+          }
+      ]
+  
   });
 
   const handleSubmit = (event) => {
@@ -31,7 +56,7 @@ const SellNewItem = () => {
     axios
       .post("http://localhost:8080/api/v1/properties/", formData)
       .then((response) => {
-        console.log(response);
+        console.log(formData);
         toast.success("Item placed for Sell");
       })
       .catch((error) => {
@@ -202,7 +227,7 @@ const SellNewItem = () => {
               className="form-control"
               name="hasTenant"
               id="hasTenant"
-              value={formData.hasTenant}
+              value={formData.hasTenent}
               onChange={handleChange}
               required
             />
@@ -215,7 +240,7 @@ const SellNewItem = () => {
               className="form-control"
               name="price"
               id="price"
-              value={formData.price}
+              value={formData.propertyPrice}
               onChange={handleChange}
               required
             />

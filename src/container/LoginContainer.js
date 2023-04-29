@@ -14,6 +14,7 @@ function LoginContainer() {
   const loginRef = useRef();
   const navigate = useNavigate();
 
+  
   const loginOperation = (e) => {
     e.preventDefault()
 
@@ -53,9 +54,21 @@ function LoginContainer() {
   function doPageRedirection(params) {
     // console.log("COOKIE", JSON.parse(Cookies.get("userData")));;
     // console.log("KEI VAHCA?",  v);
-    navigate("/customer");
+    // navigate("/customer");
     // const usr =Cookies.get("userData");
 
+    const formData = loginRef.current;
+    const email = formData['username'].value;
+    if(email==="hpaiton0@pen.io"){
+      console.log("Owner")
+      navigate("/owner");
+    }else if(email==="cpoundsford1@msn.com"){
+      console.log("custommer")
+      navigate("/customer")
+    }else if("bmarriott6@uol.com.br"){
+      console.log("admin")
+      navigate("/admin")
+    }
   }
 
 
@@ -125,7 +138,14 @@ function LoginContainer() {
   useEffect(() => {
     if (Cookies.get("userData")
       && JSON.parse(Cookies.get("userData")).loggedIn) {
-      navigate("/redirecttocustomer");
+
+        const formData = loginRef.current;
+        const email = formData['username'].value;
+        if(email==="hpaiton0@pen.io"){
+          console.log("Owner")
+          navigate("/owner");
+        }
+      // navigate("/redirecttocustomer");
     }
   }, [])
 

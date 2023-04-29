@@ -14,7 +14,7 @@ const ListOfPropertyOnSell = (props) => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/api/v1/properties/owner/" + 2)
+      .get("http://localhost:8080/api/v1/properties/owner/" + 1) //1 is Owner
       .then((response) => {
         setPropertiesOnSell(response.data);
         console.log(response.data).catch((error) => {

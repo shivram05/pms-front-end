@@ -10,34 +10,35 @@ function PropertyContainer() {
 
   useEffect(() => {
     axios.get('http://localhost:8080/api/v1/properties/')
-    .then((response) => {
-      console.log("Response data: " + response.data)
-      setProperties(response.data)
-    })
-    .catch((error)=>{console.log("Error", error)})
-  },[])
+      .then((response) => {
+        console.log("Response data: " + response.data)
+        setProperties(response.data)
+      })
+      .catch((error) => { console.log("Error", error) })
+  }, [])
 
-  const fetchData = properties.map((s)=>{
+  const fetchData = properties.map((s) => {
     console.log(s);
   });
   return (
     <div>
       <h1>Property List</h1>
       <ul className="property-list">
-      <div className="card-container">
-      {properties.map((property) => (
-          <li key={property.propertyDetail.pdId}>
-          <PropertyCard 
-            image={property.propertyImages[0].imageLocation}
-            price={property.propertyDetail.propertyPrice}
-            address = {property.address}
-            propertyStatus = {property.statusEnum}
-            propertyType={property.propertyDetail.propertyType}
-            id={property.propertyDetail.pdId}
-          />
-
-          </li>
-        ))}
+        <div className="card-container">
+          {properties.map((property) => (
+            <li>
+              {property.address && property.statusEnum && property.propertyDetail.propertyType &&
+                <PropertyCard
+                  image={property.propertyImages[0].imageLocation}
+                  price={property.propertyDetail.propertyPrice}
+                  address={property.address}
+                  propertyStatus={property.statusEnum}
+                  propertyType={property.propertyDetail.propertyType}
+                  id={property.propertyDetail.pdId}
+                />
+              }
+            </li>
+          ))}
         </div>
       </ul>
     </div>

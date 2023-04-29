@@ -72,8 +72,9 @@ const ListOfOffers = () => {
 
   useEffect(() => {
     // userId
+    const ownerId = 2;
     axios
-      .get("http://localhost:8080/api/v1/offers/6")
+      .get("http://localhost:8080/api/v1/offers/" + ownerId)
       .then((response) => {
         setOfferListData(response.data);
 
